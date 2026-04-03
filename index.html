@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uwch Creative — Aerial Property Photography, South Wales</title>
+<meta name="description" content="Professional drone photography and video for estate agents in South Wales. CAA certified, fully insured. Packages from £250. Swansea, Carmarthen, Llanelli, Cardiff.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a18;
+    --ink-mid: #4a4a44;
+    --ink-soft: #8a8a80;
+    --paper: #f5f3ee;
+    --paper-dark: #ede9e0;
+    --accent: #2d5a3d;
+    --accent-light: #e8f0eb;
+    --rule: rgba(26,26,24,0.12);
+    --gold: #b8960c;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--accent);
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-bar-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgba(245,243,238,0.7);
+    text-transform: uppercase;
+  }
+
+  /* ── HEADER ── */
+  header {
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 2rem;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .brand-name span { color: var(--accent); }
+
+  .brand-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+
+  .header-contact {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-headline {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--ink);
+    max-width: 620px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-body {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  /* ── PACKAGES ── */
+  .packages-section {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .pkg {
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--rule);
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pkg:last-child { border-right: 1px solid var(--rule); }
+
+  .pkg.featured {
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
+  }
+
+  .pkg.featured + .pkg { border-left: none; }
+
+  .pkg-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.6rem;
+  }
+
+  .pkg.featured .pkg-tag { color: rgba(245,243,238,0.5); }
+
+  .pkg-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.2rem;
+  }
+
+  .pkg-for {
+    font-size: 0.82rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+
+  .pkg.featured .pkg-for { color: rgba(245,243,238,0.5); }
+
+  .pkg-price {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
+  }
+
+  .pkg.featured .pkg-price { color: #e8c84a; }
+
+  .pkg-rule {
+    height: 1px;
+    background: var(--rule);
+    margin-bottom: 1.2rem;
+  }
+
+  .pkg.featured .pkg-rule { background: rgba(245,243,238,0.18); }
+
+  .pkg-list {
+    list-style: none;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 2;
+    flex-grow: 1;
+  }
+
+  .pkg.featured .pkg-list { color: rgba(245,243,238,0.85); }
+
+  .pkg-list li::before {
+    content: '— ';
+    color: var(--accent);
+  }
+
+  .pkg.featured .pkg-list li::before { color: rgba(245,243,238,0.35); }
+
+  /* ── ADD-ONS BAR ── */
+  .addons {
+    margin-top: 1.25rem;
+    padding: 1.1rem 1.5rem;
+    background: var(--paper-dark);
+    border: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 3rem;
+  }
+
+  .addons-heading {
+    grid-column: 1 / -1;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.4rem;
+  }
+
+  .addon {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    padding: 0.15rem 0;
+  }
+
+  .addon-cost {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .addons-footer {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.82rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  /* ── INCLUDED ── */
+  .included-section {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .included-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 2.5rem;
+    margin-top: 1rem;
+  }
+
+  .included-item {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .tick {
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* ── WHERE WE WORK ── */
+  .catchment {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .catchment-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    padding-top: 4px;
+  }
+
+  .catchment-text {
+    font-size: 1.02rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    margin-bottom: 1.25rem;
+    line-height: 1.65;
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border: 1px solid var(--rule);
+    color: var(--ink-mid);
+    background: var(--paper-dark);
+  }
+
+  .pill.close {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  /* ── CREDENTIALS ── */
+  .credentials {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .cred-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .cred-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .cred-note {
+    font-size: 0.82rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2.5rem 0 3.5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .cta {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  .cta strong { font-weight: 600; }
+
+  .footer-contact {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--ink-mid);
+    line-height: 2;
+  }
+
+  .footer-contact a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .tagline {
+    display: block;
+    margin-top: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── BOTTOM BAR ── */
+  .bottom-bar {
+    background: var(--accent);
+    padding: 0.4rem 2rem;
+    text-align: center;
+  }
+
+  .bottom-bar-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgba(245,243,238,0.5);
+    text-transform: uppercase;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    .top-bar, .bottom-bar { display: none; }
+    .page { max-width: 100%; padding: 0 1.5cm; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 700px) {
+    .brand-name { font-size: 2rem; }
+    .hero-headline { font-size: 1.5rem; }
+    header { grid-template-columns: 1fr; }
+    .header-contact { text-align: left; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .pkg { border-right: 1px solid var(--rule); border-bottom: none; }
+    .pkg:last-child { border-bottom: 1px solid var(--rule); }
+    .pkg.featured + .pkg { border-left: 1px solid var(--rule); }
+    .addons { grid-template-columns: 1fr; }
+    .included-grid { grid-template-columns: 1fr; }
+    .catchment { grid-template-columns: 1fr; gap: 1rem; }
+    .credentials { grid-template-columns: 1fr; gap: 1.5rem; }
+    footer { grid-template-columns: 1fr; }
+    .footer-contact { text-align: left; }
+    .top-bar, .bottom-bar { padding: 0.5rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-text">CAA Certified · GVC · A2CofC · Fully Insured</span>
+  <span class="top-bar-text">hello@uwchcreative.co.uk</span>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div>
+      <div class="brand-name">U<span>w</span>ch <span>C</span>reative</div>
+      <div class="brand-sub">Aerial property photography · South Wales</div>
+    </div>
+    <div class="header-contact">
+      Cross Hands, Carmarthenshire<br>
+      uwchcreative.co.uk<br>
+      hello@uwchcreative.co.uk
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="hero-headline">
+      Professional aerial photography<br>
+      <em>that helps your listings sell faster.</em>
+    </h1>
+    <p class="hero-body">
+      Properties with aerial photography attract more views, generate stronger enquiries, and spend less time on the market. We handle everything — flight planning, compliance, shooting, editing, and delivery — so you can focus on selling.
+    </p>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages-section">
+    <div class="section-label">Packages · per property</div>
+
+    <div class="packages-grid">
+      <div class="pkg">
+        <span class="pkg-tag">Essential</span>
+        <div class="pkg-name">Property Stills</div>
+        <div class="pkg-for">Standard residential listings</div>
+        <div class="pkg-price">£250</div>
+        <div class="pkg-rule"></div>
+        <ul class="pkg-list">
+          <li>Up to 30 mins on site</li>
+          <li>8–10 edited aerial stills</li>
+          <li>Optimised for Rightmove, Zoopla &amp; web</li>
+          <li>48-hour delivery</li>
+        </ul>
+      </div>
+
+      <div class="pkg featured">
+        <span class="pkg-tag">Professional</span>
+        <div class="pkg-name">Stills &amp; Video</div>
+        <div class="pkg-for">Higher-value properties &amp; plots</div>
+        <div class="pkg-price">£400</div>
+        <div class="pkg-rule"></div>
+        <ul class="pkg-list">
+          <li>Up to 60 mins on site</li>
+          <li>12–15 edited aerial stills</li>
+          <li>60–90s edited flyover video</li>
+          <li>Portal + social media formats</li>
+          <li>48-hour delivery</li>
+        </ul>
+      </div>
+
+      <div class="pkg">
+        <span class="pkg-tag">Premium</span>
+        <div class="pkg-name">Full Property Film</div>
+        <div class="pkg-for">Luxury listings &amp; developments</div>
+        <div class="pkg-price">£600</div>
+        <div class="pkg-rule"></div>
+        <ul class="pkg-list">
+          <li>Up to 90 mins on site</li>
+          <li>20+ edited aerial stills</li>
+          <li>2–3 min cinematic video</li>
+          <li>Social media clips included</li>
+          <li>Agent branding on video</li>
+          <li>24-hour priority delivery</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="addons">
+      <span class="addons-heading">Add-ons</span>
+      <div class="addon">Twilight / golden hour shoot<span class="addon-cost">+£100</span></div>
+      <div class="addon">Rush same-day delivery<span class="addon-cost">+£100</span></div>
+      <div class="addon">Additional social media edits<span class="addon-cost">+£50 / clip</span></div>
+      <div class="addon">Return visit (season / renovation)<span class="addon-cost">20% off</span></div>
+      <div class="addons-footer">Regular booking discount: 15–20% off for agents with 4+ properties per month.</div>
+    </div>
+  </section>
+
+  <!-- EVERY BOOKING INCLUDES -->
+  <section class="included-section">
+    <div class="section-label">Every booking includes</div>
+    <div class="included-grid">
+      <div class="included-item"><span class="tick">✓</span>Full pre-visit flight planning &amp; risk assessment</div>
+      <div class="included-item"><span class="tick">✓</span>Files sized for Rightmove, Zoopla &amp; web</div>
+      <div class="included-item"><span class="tick">✓</span>CAA-compliant commercial operations</div>
+      <div class="included-item"><span class="tick">✓</span>Online delivery via secure download link</div>
+      <div class="included-item"><span class="tick">✓</span>Professional colour grading &amp; editing</div>
+      <div class="included-item"><span class="tick">✓</span>Public liability insurance coverage</div>
+    </div>
+  </section>
+
+  <!-- WHERE WE WORK -->
+  <section class="catchment">
+    <div class="catchment-label">Where we work</div>
+    <div>
+      <p class="catchment-text">Based in Cross Hands, Carmarthenshire — within one hour of most of South and West Wales. Travel included for jobs within 25 miles.</p>
+      <div class="pills">
+        <span class="pill close">Llanelli · 15 min</span>
+        <span class="pill close">Carmarthen · 20 min</span>
+        <span class="pill close">Swansea · 25 min</span>
+        <span class="pill close">Neath · 30 min</span>
+        <span class="pill">Brecon Beacons · 45 min</span>
+        <span class="pill">Pembrokeshire · 50 min</span>
+        <span class="pill">Cardiff · 55 min</span>
+        <span class="pill">Aberystwyth · 60 min</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="credentials">
+    <div>
+      <div class="cred-label">Qualification</div>
+      <div class="cred-value">GVC Certified</div>
+      <div class="cred-note">CAA-approved, TQUK Level 4</div>
+    </div>
+    <div>
+      <div class="cred-label">Insurance</div>
+      <div class="cred-value">Public Liability</div>
+      <div class="cred-note">Full commercial drone cover</div>
+    </div>
+    <div>
+      <div class="cred-label">Equipment</div>
+      <div class="cred-value">DJI Mini 5 Pro</div>
+      <div class="cred-note">4K video, 48MP stills</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="cta">
+      Every property is different.<br>
+      <strong>Let's talk about yours.</strong>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:hello@uwchcreative.co.uk">hello@uwchcreative.co.uk</a><br>
+      uwchcreative.co.uk<br>
+      Cross Hands, SA14<br>
+      <span class="tagline">Uwch — above the ordinary.</span>
+    </div>
+  </footer>
+
+</div>
+
+<div class="bottom-bar">
+  <span class="bottom-bar-text">© 2026 Uwch Creative · All prices exclude VAT where applicable</span>
+</div>
+
+</body>
+</html>
